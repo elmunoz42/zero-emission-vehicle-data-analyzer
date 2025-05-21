@@ -172,7 +172,7 @@ def describe_dataset_with_claude(df, api_key=None, model=DEFAULT_MODEL,
     # Prepare the request
     headers = {
         "Content-Type": "application/json",
-        "x-api-key": api_key,
+        "anthropic-api-key": api_key,
         "anthropic-version": version
     }
     
