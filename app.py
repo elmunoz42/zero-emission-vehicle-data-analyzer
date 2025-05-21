@@ -16,7 +16,7 @@ except ImportError:
     st.error("Claude API integration is unavailable. Make sure to install the required packages.")
 
 def main():
-    st.title("EV Energy Delivery Forecast Tool")
+    st.title("EV Energy Delivery Forecast Tool v-0.0.1")
     st.write("Upload your CSV data to forecast energy delivery for the next three months")
     
     # File input section with a description
