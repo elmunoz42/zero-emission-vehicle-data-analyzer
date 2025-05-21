@@ -12,7 +12,7 @@ CUSTOM_PROMPT = """
         You are an expert data analyst providing Zero-Emission Vehicle specialist actionable insight from data collected about charging station utilization over time. Based on the dataset statistics provided, give me a concise, 
         human-readable interpretation of the key characteristics of this dataset. Focus on:
         
-        - Describe the Started Sessions, AVG session duration (minutes) and Energy delivered (kWh) columns ONLY
+        - Describe ONLY the Started Sessions, AVG session duration (minutes) and Energy delivered (kWh) columns.
         - NO MORE THANT 160 WORDS FOR THE RESPONSE
         """
 
@@ -111,7 +111,7 @@ def describe_dataset_with_fallback(df, custom_prompt=CUSTOM_PROMPT):
             if isinstance(result, list) and len(result) > 0:
                 if 'response' in result[0] and 'response' in result[0]['response']:
                     interpretation = result[0]['response']['response']
-                    return interpretation + f"\n\n\n\n\n\n\n\n\n\nLlama 2 Fallback API"
+                    return interpretation + f"\n\n\n\n\n\n\n\n\n\nLlama 2 Fallback API Response"
             
             # If we couldn't find the expected structure, return the raw response
             return f"Received response but couldn't parse expected structure. Raw response: {result}"

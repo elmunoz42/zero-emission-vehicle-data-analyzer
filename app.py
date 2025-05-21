@@ -30,11 +30,11 @@ except ImportError:
     st.error("Claude API integration is unavailable. Make sure to install the required packages.")
 
 def main():
-    st.title("EV Energy Delivery Forecast Tool")
-    st.write("Upload your CSV data to forecast energy delivery for the next three months")
+    st.title("EV Energy Delivery Forecast Tool (Beta)")
+    st.header("Upload your CSV data to forecast energy delivery for the next three months")
     
     # Show app version info with fallback support
-    st.sidebar.info("Version 0.0.9 - Added LLM Fallback Support")
+    st.sidebar.info("Version 0.1.0 - Added LLM Fallback Support when Claude API is unavailable")
     
     # Display available LLM systems in sidebar
     st.sidebar.subheader("LLM System Status")
