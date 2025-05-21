@@ -111,7 +111,7 @@ def describe_dataset_with_fallback(df, custom_prompt=CUSTOM_PROMPT):
             if isinstance(result, list) and len(result) > 0:
                 if 'response' in result[0] and 'response' in result[0]['response']:
                     interpretation = result[0]['response']['response']
-                    return interpretation + f"\n\n\n\n\n\n\n\n\n\n{result[0]['response']['source']}"
+                    return interpretation + f"\n\n\n\n\n\n\n\n\n\nLlama 2 Fallback API"
             
             # If we couldn't find the expected structure, return the raw response
             return f"Received response but couldn't parse expected structure. Raw response: {result}"
