@@ -11,10 +11,9 @@ FALLBACK_ENDPOINT = "https://llama2-query-responder.fountain-city.workers.dev/"
 CUSTOM_PROMPT = """
         You are an expert data analyst providing Zero-Emission Vehicle specialist actionable insight from data collected about charging station utilization over time. Based on the dataset statistics provided, give me a concise, 
         human-readable interpretation of the key characteristics of this dataset. Focus on:
-        - No more than 160 words for the entire response
-        - Any interesting patterns or insights
-        - Keep your response to a maximum of 5 bullet points and explain that this is a Llama 2 fallback response.
         
+        - Describe the Started Sessions, AVG session duration (minutes) and Energy delivered (kWh) columns ONLY
+        - NO MORE THANT 160 WORDS FOR THE RESPONSE
         """
 
 
@@ -112,7 +111,7 @@ def describe_dataset_with_fallback(df, custom_prompt=CUSTOM_PROMPT):
             if isinstance(result, list) and len(result) > 0:
                 if 'response' in result[0] and 'response' in result[0]['response']:
                     interpretation = result[0]['response']['response']
-                    return interpretation
+                    return interpretation + f"\n\n\n\n\n\n\n\n\n\n{result[0]['response']['source']}"
             
             # If we couldn't find the expected structure, return the raw response
             return f"Received response but couldn't parse expected structure. Raw response: {result}"

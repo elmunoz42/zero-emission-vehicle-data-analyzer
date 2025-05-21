@@ -34,7 +34,7 @@ def main():
     st.write("Upload your CSV data to forecast energy delivery for the next three months")
     
     # Show app version info with fallback support
-    st.sidebar.info("Version 0.0.7 - Added LLM Fallback Support")
+    st.sidebar.info("Version 0.0.9 - Added LLM Fallback Support")
     
     # Display available LLM systems in sidebar
     st.sidebar.subheader("LLM System Status")
