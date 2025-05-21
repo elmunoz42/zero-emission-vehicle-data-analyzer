@@ -11,10 +11,9 @@ FALLBACK_ENDPOINT = "https://llama2-query-responder.fountain-city.workers.dev/"
 CUSTOM_PROMPT = """
         You are an expert data analyst providing Zero-Emission Vehicle specialist actionable insight from data collected about charging station utilization over time. Based on the dataset statistics provided, give me a concise, 
         human-readable interpretation of the key characteristics of this dataset. Focus on:
-        
-        1. The typical values and ranges for numerical columns
-        2. Ignore the categorical features since you don't have data for these. DONT DESCRIBE FEATURES FOR WHICH YOU DON'T HAVE NUMBERS.
-        4. Any interesting patterns or insights
+    
+        - Any interesting patterns or insights
+        - Keep your response to a maximum of 5 bullet points and explain that this is a fallback response.
         """
 
 
